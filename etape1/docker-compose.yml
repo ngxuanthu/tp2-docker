@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  http:
+    build: ./http
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - script
+
+  script:
+    build: ./script
+    volumes:
+      - ./app:/app
